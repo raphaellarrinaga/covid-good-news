@@ -19,25 +19,40 @@ function showInfo(data, tabletop) {
     var article = document.createElement("li");
     article.innerHTML = '';
 
-    // if (item.Language) {
-    //   article.innerHTML += '<span>' + item.Language + '</span>';
-    // }
+    var articleContent = document.createElement("div");
+    articleContent.classList.add('article__content');
+
+    var metas = document.createElement("p");
+    metas.classList.add('article__metas');
+
+    if (item.PublicationDate) {
+      metas.innerHTML += '<span>' + item.PublicationDate + '</span>';
+    }
+    if (item.Source) {
+      metas.innerHTML += '<span>' + item.Source + '</span>';
+    }
+
     if (item.Belgium) {
-      article.innerHTML += '<span>🇧🇪</span>';
+      article.innerHTML += '<span class="article__zone">🇧🇪</span>';
     }
     if (item.International) {
-      article.innerHTML += '<span>🌍</span>';
+      article.innerHTML += '<span class="article__zone">🌍</span>';
     }
     if (item.Url && item.Label) {
-      article.innerHTML += '<a href="'+ item.Url +'">'+ item.Label +'</a>';
+      articleContent.innerHTML += '<a href="'+ item.Url +'">'+ item.Label +'</a>';
     } else if (item.Url) {
-      article.innerHTML += '<a href="'+ item.Url +'">'+ item.Url +'</a>';
+      articleContent.innerHTML += '<a href="'+ item.Url +'">'+ item.Url +'</a>';
     }
+
+    // articleContent.innerHTML += metas;
+    // article.innerHTML += articleContent;
+    articleContent.appendChild(metas);
+    article.appendChild(articleContent);
 
     if (item.Instagram) {
       renderIgPost("https://api.instagram.com/oembed?omitscript=true&url=" + item.Url);
     } else {
-      document.getElementById("news").appendChild(article);
+      document.getElementById("news").prepend(article);
     }
   });
 
@@ -52,11 +67,10 @@ function renderIgPost(url) {
   req.send()
   req.addEventListener("load", function(){
     parsed = JSON.parse(req.responseText);
-    var newcontent = document.createElement('div');
-    newcontent.innerHTML = parsed.html;
-    while (newcontent.firstChild) {
-      embed.appendChild(newcontent.firstChild);
-    }
+    var article = document.createElement('div');
+    article.classList.add('media');
+    article.innerHTML = parsed.html;
+    embed.prepend(article);
     instgrm.Embeds.process();
   });
 }
