@@ -17,22 +17,21 @@ function showInfo(data, tabletop) {
 
   elems.forEach(function(item){
     var article = document.createElement("li");
-
     article.innerHTML = '';
-    if (item.Url && item.Label) {
-      article.innerHTML += '<a href="'+ item.Url +'">'+ item.Label +'</a>';
-    } else if (item.Url) {
-      article.innerHTML += '<a href="'+ item.Url +'">'+ item.Url +'</a>';
-    }
 
     // if (item.Language) {
     //   article.innerHTML += '<span>' + item.Language + '</span>';
     // }
     if (item.Belgium) {
-      article.innerHTML += '<span>Be</span>';
+      article.innerHTML += '<span>🇧🇪</span>';
     }
     if (item.International) {
-      article.innerHTML += '<span>International</span>';
+      article.innerHTML += '<span>🌍</span>';
+    }
+    if (item.Url && item.Label) {
+      article.innerHTML += '<a href="'+ item.Url +'">'+ item.Label +'</a>';
+    } else if (item.Url) {
+      article.innerHTML += '<a href="'+ item.Url +'">'+ item.Url +'</a>';
     }
 
     if (item.Instagram) {
