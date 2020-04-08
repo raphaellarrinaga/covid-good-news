@@ -1,0 +1,103 @@
+body {
+  background: #fbfbfb;
+  font: 16px/1.5 "Montserrat", "Helvetica", sans-serif;
+  padding: 3rem 2rem;
+  position: relative;
+}
+
+.page {
+  margin: 0 auto;
+  max-width: 1300px;
+}
+
+@media screen and (min-width: 768px) {
+  .l-grid {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+}
+
+.l-grid-col {
+  flex: 1 1 50%;
+  padding: 0 1rem;
+}
+  .l-grid-col:first-child {
+    padding-right: 4rem;
+  }
+
+.page-title {
+  color: #333;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: .01em;
+}
+  .page-title span {
+    font-size: 1.4em;
+  }
+
+.page-subtitle {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.news {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.news li {
+  align-items: flex-start;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: .75rem 0;
+  justify-content: space-between;
+}
+
+.news a {
+  color: #666;
+  text-decoration: none;
+  transform: all .3s;
+  font-size: 1.25rem;
+}
+  .news a:hover {
+    color: #111;
+  }
+
+.news span {
+  display: inline-block;
+  padding: .1em .3em;
+  margin-right: .65rem;
+  border-radius: 2px;
+  font-size: .85rem;
+  background: blue;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  letter-spacing: .1em;
+}
+
+.summary {
+  border-radius: 3px;
+  border: 2px solid #ddd;
+  margin-bottom: 3rem;
+  padding: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .medias {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}
+  .medias > iframe {
+    flex: 1 0 40%;
+    margin: 0 !important;
+    width: auto !important;
+  }
