@@ -13,7 +13,7 @@
 - transiton on page load
 - better copy
 - email address for feed back
-- provide a view for youtube videos, facebook
+- provide a view for youtube videos, facebook, twitter
 - provide a way to set images only
 - provide rss feed
 - gulp, compilation
