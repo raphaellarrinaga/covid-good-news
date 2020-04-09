@@ -16,7 +16,8 @@ function showInfo(data, tabletop) {
   var items = [];
 
   elems.forEach(function(item){
-    var article = document.createElement("li");
+    var article = document.createElement("article");
+    article.classList.add('article');
     article.innerHTML = '';
 
     var articleContent = document.createElement("div");
@@ -26,7 +27,7 @@ function showInfo(data, tabletop) {
     metas.classList.add('article__metas');
 
     if (item.PublicationDate) {
-      metas.innerHTML += '<span>' + item.PublicationDate + '</span>';
+      metas.innerHTML += '<time>'+ item.PublicationDate +'</time>';
     }
     if (item.Source) {
       metas.innerHTML += '<span>' + item.Source + '</span>';
@@ -39,7 +40,7 @@ function showInfo(data, tabletop) {
       article.innerHTML += '<span class="article__zone">🌍</span>';
     }
     if (item.Url && item.Label) {
-      articleContent.innerHTML += '<a href="'+ item.Url +'">'+ item.Label +'</a>';
+      articleContent.innerHTML += '<a href="'+ item.Url +'"><span>'+ item.Label +'</span></a>';
     } else if (item.Url) {
       articleContent.innerHTML += '<a href="'+ item.Url +'">'+ item.Url +'</a>';
     }
@@ -50,7 +51,9 @@ function showInfo(data, tabletop) {
     article.appendChild(articleContent);
 
     if (item.Instagram) {
-      renderIgPost("https://api.instagram.com/oembed?omitscript=true&url=" + item.Url);
+      setTimeout(() => {
+        renderIgPost("https://api.instagram.com/oembed?omitscript=true&url=" + item.Url);
+      }, 300);
     } else {
       document.getElementById("news").prepend(article);
     }
@@ -73,6 +76,11 @@ function renderIgPost(url) {
     embed.prepend(article);
     instgrm.Embeds.process();
   });
+}
+
+function toTimestamp(strDate){
+ var datum = Date.parse(strDate);
+ return datum/1000;
 }
 
 init()
