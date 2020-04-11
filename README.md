@@ -5,14 +5,13 @@
 - summary content (links, static information)
 - load more link, end of list state
 - mobile switch views
-- set design
 - set date with timestamp
 - order by publication date
-- metatags, favicon
+✓ metatags, favicon
 - get og image or fallback from link
 - transiton on page load
 - better copy
-- email address for feed back
+✓ email address for feed back
 - provide a view for youtube videos, facebook, twitter
 - provide a way to set images only
 - provide rss feed
@@ -22,6 +21,5 @@
 - restrict google sheet access
 - cache articles
 - lazy load
-- analytics
-- define and set domain name
-- publish
+✓ analytics
+✓ define and set domain name
