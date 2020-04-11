@@ -10,31 +10,36 @@
   </script>
   <meta charset="utf-8">
   <title>Covid good news</title>
+  <meta content="Covid good news" property="og:title"/>
+  <meta content="A focus and list of positive news, facts and random stuff related to Covid-19." name="description"/>
+  <meta content="A focus and list of positive news, facts and random stuff related to Covid-19." property="og:description"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link href="assets/img/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
-  <link href="assets/img/favicons/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16" />
-  <link href="assets/img/favicons/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32" /> -->
+  <link href="assets/img/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="page">
     <header class="page-header">
-      <h1 class="page-title">Covid <span>🙌🏼</span> news</h1>
-      <h3 class="page-subtitle">Positive stuff only.</h3>
+      <h1 class="page-title">Covid <span>🙌🏼</span> news <small>beta</small></h1>
+      <h3 class="page-subtitle">Optimistic content only.</h3>
     </header>
+    <div id="news" class="news"></div>
     <section class="summary">
-      <p><a href="https://www.rtl.be/info/progression-coronavirus-temps-reel.htm">📉Dégression en temps réel</a>
+      <p><strong>Useful infos elsewhere:</strong> <a href="https://www.rtl.be/info/progression-coronavirus-temps-reel.htm">📉Dégression en temps réel</a>
       <a href="https://www.info-coronavirus.be/fr/">🤙🏼SPF</a>
       <a href="https://www.who.int/fr/emergencies/diseases/novel-coronavirus-2019/advice-for-public/q-a-coronaviruses">👏🏼OMS</a>
-      <a href="https://telegram.org/blog/coronavirus">🤙🏼Telegram blog</a></p>
+      <a href="https://telegram.org/blog/coronavirus">✈️Telegram blog</a></p>
     </section>
-    <div id="news" class="news"></div>
+    <section class="about" id="about">
+      <p>🤔This project is a personal coding experimentation and work in progress. If you want to suggest links, contribute or anything, <a href="covidgoodnews@gmail.com">send us a mail</a></p>
+      <p>Ce site est projet en évolution. N'hésitez pas à <a href="covidgoodnews@gmail.com">envoyer un mail</a> pour ajouter des liens, contribuer ou autre. 👌🏼</p>
+    </section>
   </div>
-  <div id="medias" class="medias grid"></div>
+  <div id="medias" class="medias"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.2/tabletop.js"></script>
   <script type="text/javascript" src="https://platform.instagram.com/en_US/embeds.js"></script>
-  <script defer type="text/javascript" src="scripts.js" charset="utf-8"></script>
+  <script defer type="text/javascript" src="assets/js/scripts.js" charset="utf-8"></script>
 </body>
 </html>
