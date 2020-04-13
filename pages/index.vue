@@ -61,21 +61,21 @@
 import Logo from '~/components/Logo.vue'
 const axios = require('axios')
 const _ = require('lodash')
-// @todo restrict API key before prod.
-const url = 'https://sheets.googleapis.com/v4/spreadsheets/14xi3-UP9TpUs6ZfxwhJiluJneqqpXHY27Me5b_NCDo4/values/Content!A1:I1000?key=AIzaSyDUnXT4IAuO2sdxS2fzh19jvLKDMv3F4eI'
+const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
+const SHEET_DATA_SOURCE_URL = 'https://sheets.googleapis.com/v4/spreadsheets/14xi3-UP9TpUs6ZfxwhJiluJneqqpXHY27Me5b_NCDo4/values/Content!A1:I1000?key='+ GOOGLE_API_KEY
 import InstagramEmbed from 'vue-instagram-embed'
-
 import ClientOnly from 'vue-client-only'
 
 export default {
   async asyncData () {
-    const response = await axios.get(url)
+    const response = await axios.get(SHEET_DATA_SOURCE_URL)
     const rows = response.data.values
     const properties = rows.shift()
     const articles = []
     for (const i in rows) {
       articles.push(_.zipObject(properties, rows[i]))
     }
+    // console.log(GOOGLE_API);
     const aReversed = articles.reverse();
     const news = aReversed.filter(item => !item.Instagram)
     const insta = aReversed.filter(item => item.Instagram && item.Url)

@@ -1,9 +1,11 @@
 # covid-good-news
 
-> Covid good news
+> Display an optimistic list of links regarding COVID-19 news. Content is managed under Google Sheets. [covidgoodnews.be](https://covidgoodnews.be).
 
 ## Roadmap
 
+- protect google api, dont expose in repo or restrict.
+- protect google sheet.
 - test netlify
 - json rss
 - cache json
@@ -12,7 +14,7 @@
 - pwa
 - load more
 
-## Build Setup
+## Build Setup (default nuxt app readme.md)
 
 ``` bash
 # install dependencies
@@ -30,3 +32,7 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Deployment
+
+- @see https://vueschool.io/lessons/how-to-deploy-nuxtjs-to-netlify?friend=nuxt
