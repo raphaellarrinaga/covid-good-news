@@ -1,0 +1,21 @@
+{
+  "name": "covid-good-news",
+  "version": "1.0.0",
+  "description": "Covid good news",
+  "author": "Raphael Larrinaga",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.9.7",
+    "axios": "^0.19.2",
+    "nuxt": "^2.0.0",
+    "vue-client-only": "^2.0.0",
+    "vue-instagram-embed": "^1.0.0"
+  },
+  "devDependencies": {}
+}

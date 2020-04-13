@@ -1,25 +1,32 @@
-# Covid good news
+# covid-good-news
 
-### Roadmap
+> Covid good news
 
-- summary content (links, static information)
-- load more link, end of list state
-- mobile switch views
-- set date with timestamp
-- order by publication date
-✓ metatags, favicon
-- get og image or fallback from link
-- transiton on page load
-- better copy
-✓ email address for feed back
-- provide a view for youtube videos, facebook, twitter
-- provide a way to set images only
-- provide rss feed
-- gulp, compilation
+## Roadmap
 
-- IG posts masonry
-- restrict google sheet access
-- cache articles
-- lazy load
-✓ analytics
-✓ define and set domain name
+- test netlify
+- json rss
+- cache json
+- message end of list
+- mobile view switch, nav
+- pwa
+- load more
+
+## Build Setup
+
+``` bash
+# install dependencies
+$ yarn install
+
+# serve with hot reload at localhost:3000
+$ yarn dev
+
+# build for production and launch server
+$ yarn build
+$ yarn start
+
+# generate static project
+$ yarn generate
+```
+
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
