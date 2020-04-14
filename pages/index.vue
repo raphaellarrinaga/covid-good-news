@@ -67,7 +67,7 @@ import ClientOnly from 'vue-client-only'
 export default {
   async asyncData () {
     const cgnData = await axios.get('/cgnData.json').then(res => res.data)
-    const news = cgnData.filter(item => !item.Instagram)
+    const news = cgnData.filter(item => !item.Instagram && item.Url && item.Label)
     const insta = cgnData.filter(item => item.Instagram && item.Url)
     return { insta, news }
   },
