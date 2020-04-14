@@ -1,42 +1,42 @@
 <template>
   <div class="content">
     <div class="page">
-      <header class="page-header">
-        <h1 class="page-title">Covid <span>🙌🏼</span> news <small>beta</small></h1>
-        <h3 class="page-subtitle">Optimistic content only.</h3>
-      </header>
-      <div class="news">
-        <article
-          v-for="article in news"
-          :key="article.id"
-          class="article">
-          <span class="article__zone" v-if="article.International">🌍</span>
-          <span class="article__zone" v-if="article.Belgium">🇧🇪</span>
-          <!-- {{ article.Image }} -->
-          <!-- {{ article.Language }} -->
-          <div class="article__content">
-            <a :href="article.Url">
-              <span>{{ article.Label }}</span>
-            </a>
-            <p
-              class="article__metas"
-              v-if="article.PublicationDate || article.Source">
-              <time v-if="article.PublicationDate">{{ article.PublicationDate }}</time>
-              <span v-if="article.Source">{{ article.Source }}</span>
-            </p>
-          </div>
-        </article>
+      <div class="page-content">
+        <header class="page-header">
+          <h1 class="page-title">Covid <span>🙌🏼</span> news <small>beta</small></h1>
+          <h3 class="page-subtitle">Optimistic content only.</h3>
+        </header>
+        <div class="news">
+          <article
+            v-for="article in news"
+            :key="article.id"
+            class="article">
+            <span class="article__zone" v-if="article.International">🌍</span>
+            <span class="article__zone" v-if="article.Belgium">🇧🇪</span>
+            <div class="article__content">
+              <a :href="article.Url">
+                <span>{{ article.Label }}</span>
+              </a>
+              <p
+                class="article__metas"
+                v-if="article.PublicationDate || article.Source">
+                <time v-if="article.PublicationDate">{{ article.PublicationDate }}</time>
+                <span v-if="article.Source">{{ article.Source }}</span>
+              </p>
+            </div>
+          </article>
+        </div>
+        <section class="summary">
+          <p><strong>Useful infos elsewhere:</strong> <a href="https://www.rtl.be/info/progression-coronavirus-temps-reel.htm">📉 Dégression en temps réel</a>
+          <a href="https://www.info-coronavirus.be/fr/">🤙🏼 SPF</a>
+          <a href="https://www.who.int/fr/emergencies/diseases/novel-coronavirus-2019/advice-for-public/q-a-coronaviruses">👏🏼 OMS</a>
+          <a href="https://telegram.org/blog/coronavirus">✈️ Telegram blog</a></p>
+        </section>
+        <section class="about" id="about">
+          <p>🤔 This project is a personal coding experimentation and work in progress. If you want to suggest links, contribute or anything, <a href="javascript:location='mailto:\u0063\u006f\u0076\u0069\u0064\u0067\u006f\u006f\u0064\u006e\u0065\u0077\u0073\u002e\u0063\u006f\u006e\u0074\u0061\u0063\u0074\u0040\u0067\u006d\u0061\u0069\u006c\u002e\u0063\u006f\u006d';void 0">send us a mail</a></p>
+          <p>Ce site est projet en évolution. N'hésitez pas à <a href="javascript:location='mailto:\u0063\u006f\u0076\u0069\u0064\u0067\u006f\u006f\u0064\u006e\u0065\u0077\u0073\u002e\u0063\u006f\u006e\u0074\u0061\u0063\u0074\u0040\u0067\u006d\u0061\u0069\u006c\u002e\u0063\u006f\u006d';void 0">envoyer un mail</a> pour ajouter des liens, contribuer ou autre. 👌🏼</p>
+        </section>
       </div>
-      <section class="summary">
-        <p><strong>Useful infos elsewhere:</strong> <a href="https://www.rtl.be/info/progression-coronavirus-temps-reel.htm">📉 Dégression en temps réel</a>
-        <a href="https://www.info-coronavirus.be/fr/">🤙🏼 SPF</a>
-        <a href="https://www.who.int/fr/emergencies/diseases/novel-coronavirus-2019/advice-for-public/q-a-coronaviruses">👏🏼 OMS</a>
-        <a href="https://telegram.org/blog/coronavirus">✈️ Telegram blog</a></p>
-      </section>
-      <section class="about" id="about">
-        <p>🤔 This project is a personal coding experimentation and work in progress. If you want to suggest links, contribute or anything, <a href="javascript:location='mailto:\u0063\u006f\u0076\u0069\u0064\u0067\u006f\u006f\u0064\u006e\u0065\u0077\u0073\u002e\u0063\u006f\u006e\u0074\u0061\u0063\u0074\u0040\u0067\u006d\u0061\u0069\u006c\u002e\u0063\u006f\u006d';void 0">send us a mail</a></p>
-        <p>Ce site est projet en évolution. N'hésitez pas à <a href="javascript:location='mailto:\u0063\u006f\u0076\u0069\u0064\u0067\u006f\u006f\u0064\u006e\u0065\u0077\u0073\u002e\u0063\u006f\u006e\u0074\u0061\u0063\u0074\u0040\u0067\u006d\u0061\u0069\u006c\u002e\u0063\u006f\u006d';void 0">envoyer un mail</a> pour ajouter des liens, contribuer ou autre. 👌🏼</p>
-      </section>
     </div>
 
     <div
@@ -48,10 +48,11 @@
           class="media">
           <instagram-embed
             :url="post.Url"
-            :max-width=400
+            :max-width=500
           />
         </div>
       </client-only>
+      <p class="media-end">That's all folks!</p>
     </div>
 
   </div>
@@ -60,25 +61,11 @@
 <script>
 const axios = require('axios')
 const _ = require('lodash')
-// const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
-// const SHEET_DATA_SOURCE_URL = 'https://sheets.googleapis.com/v4/spreadsheets/14xi3-UP9TpUs6ZfxwhJiluJneqqpXHY27Me5b_NCDo4/values/Content!A1:I1000?key='+ GOOGLE_API_KEY
 import InstagramEmbed from 'vue-instagram-embed'
 import ClientOnly from 'vue-client-only'
-// import cgnData from '~/static/cgnData.json'
-// const myfile = require(`./assets/data/geo/${jsons[i]}`)
 
 export default {
   async asyncData () {
-    // const response = await axios.get(SHEET_DATA_SOURCE_URL)
-    // const rows = response.data.values
-    // const properties = rows.shift()
-    // const articles = []
-    // for (const i in rows) {
-    //   articles.push(_.zipObject(properties, rows[i]))
-    // }
-    // const aReversed = articles.reverse();
-    // const news = aReversed.filter(item => !item.Instagram)
-    // const insta = aReversed.filter(item => item.Instagram && item.Url)
     const cgnData = await axios.get('/cgnData.json').then(res => res.data)
     const news = cgnData.filter(item => !item.Instagram)
     const insta = cgnData.filter(item => item.Instagram && item.Url)
@@ -127,6 +114,16 @@ img, video {
     margin-right: 440px;
     padding: 2rem 3rem 6rem 2rem;
   }
+}
+@media screen and (min-width: 1000px) {
+  .page {
+    margin-right: 540px;
+  }
+}
+
+.page-content {
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 .page-header {
@@ -271,10 +268,47 @@ img, video {
   }
 }
 
+@media screen and (min-width: 1000px) {
+  .medias {
+    width: 540px;
+  }
+}
+
 .media {
   display: inline-block;
   margin-bottom: 1rem;
+  width: 100%;
 }
+
+.media iframe {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media screen and (min-width: 820px) {
+  .media {
+    max-width: 400px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .media {
+    max-width: 500px;
+  }
+}
+
+.media-end {
+  color: #fefefe;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+  @media screen and (min-width: 820px) {
+    .media-end {
+      color: #1d2338;
+    }
+  }
 
 .about {
   color: #777fa5;

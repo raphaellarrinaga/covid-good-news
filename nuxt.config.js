@@ -14,11 +14,13 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Covid Good News',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+      { property: 'og:description', content: process.env.npm_package_description || '' },
+      { property: 'og:title', content: 'Covid Good News' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', sizes:"32x32", href: '/favicon-32x32.png' },
@@ -43,6 +45,9 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-17609068-5'
+    }]
   ],
   /*
   ** Nuxt.js modules
@@ -50,25 +55,7 @@ export default {
   modules: [
     ['@nuxtjs/feed'],
     // Generate static JSON based on data fetched from source.
-    // Works as cached data, generated on build task.
     '~/modules/cgnData.js',
-    // function (nuxtConfig) {
-    //   this.nuxt.hook('generate:before', async () => {
-    //     const response = await axios.get(SHEET_DATA_SOURCE_URL)
-    //     const rows = response.data.values
-    //     const properties = rows.shift()
-    //     const articles = []
-    //     for (const i in rows) {
-    //       articles.push(_.zipObject(properties, rows[i]))
-    //     }
-    //     const aReversed = articles.reverse();
-    //     const data = JSON.stringify(aReversed)
-    //     // const distGeneratePath = resolve(this.options.rootDir, join(this.options.generate.dir, '/cgnData.json'))
-    //     const distGeneratePath = resolve(this.options.rootDir, join(this.options.alias.static, '/cgnData.json'))
-    //     try { writeFileSync(distGeneratePath, data, 'utf-8'); }
-    //     catch(e) { console.log('Failed to save cgnData.json'); }
-    //   })
-    // }
   ],
   /*
   ** Generate RSS feed.
@@ -80,7 +67,7 @@ export default {
         feed.options = {
           title: 'Covid Good News',
           link: 'https://covidgoodnews.be/feed.xml',
-          description: 'Feed for Covid Good News, a focus and list of positive news, facts and random stuff related to Covid-19.'
+          description: 'Feed of Covid Good News, a focus and list of positive news, facts and random stuff related to Covid-19.'
         }
 
         const response = await axios.get(SHEET_DATA_SOURCE_URL)

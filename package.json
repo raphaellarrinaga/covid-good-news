@@ -19,5 +19,7 @@
     "vue-client-only": "^2.0.0",
     "vue-instagram-embed": "^1.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@nuxtjs/google-analytics": "^2.2.3"
+  }
 }
