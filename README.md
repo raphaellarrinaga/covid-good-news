@@ -14,6 +14,15 @@
 - pwa
 - load more
 
+## Development
+
+- See Nuxt Build Setup below
+- Add `.env` file file environment variables. See `.env.example` file.
+
+## Deployment
+
+- @see https://vueschool.io/lessons/how-to-deploy-nuxtjs-to-netlify?friend=nuxt
+
 ## Build Setup (default nuxt app readme.md)
 
 ``` bash
@@ -32,7 +41,3 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-
-## Deployment
-
-- @see https://vueschool.io/lessons/how-to-deploy-nuxtjs-to-netlify?friend=nuxt

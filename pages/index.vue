@@ -58,31 +58,33 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
 const axios = require('axios')
 const _ = require('lodash')
-const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
-const SHEET_DATA_SOURCE_URL = 'https://sheets.googleapis.com/v4/spreadsheets/14xi3-UP9TpUs6ZfxwhJiluJneqqpXHY27Me5b_NCDo4/values/Content!A1:I1000?key='+ GOOGLE_API_KEY
+// const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
+// const SHEET_DATA_SOURCE_URL = 'https://sheets.googleapis.com/v4/spreadsheets/14xi3-UP9TpUs6ZfxwhJiluJneqqpXHY27Me5b_NCDo4/values/Content!A1:I1000?key='+ GOOGLE_API_KEY
 import InstagramEmbed from 'vue-instagram-embed'
 import ClientOnly from 'vue-client-only'
+// import cgnData from '~/static/cgnData.json'
+// const myfile = require(`./assets/data/geo/${jsons[i]}`)
 
 export default {
   async asyncData () {
-    const response = await axios.get(SHEET_DATA_SOURCE_URL)
-    const rows = response.data.values
-    const properties = rows.shift()
-    const articles = []
-    for (const i in rows) {
-      articles.push(_.zipObject(properties, rows[i]))
-    }
-    // console.log(GOOGLE_API);
-    const aReversed = articles.reverse();
-    const news = aReversed.filter(item => !item.Instagram)
-    const insta = aReversed.filter(item => item.Instagram && item.Url)
+    // const response = await axios.get(SHEET_DATA_SOURCE_URL)
+    // const rows = response.data.values
+    // const properties = rows.shift()
+    // const articles = []
+    // for (const i in rows) {
+    //   articles.push(_.zipObject(properties, rows[i]))
+    // }
+    // const aReversed = articles.reverse();
+    // const news = aReversed.filter(item => !item.Instagram)
+    // const insta = aReversed.filter(item => item.Instagram && item.Url)
+    const cgnData = await axios.get('/cgnData.json').then(res => res.data)
+    const news = cgnData.filter(item => !item.Instagram)
+    const insta = cgnData.filter(item => item.Instagram && item.Url)
     return { insta, news }
   },
   components: {
-    Logo,
     ClientOnly,
     InstagramEmbed
   },
@@ -251,7 +253,6 @@ img, video {
  * Medias.
  */
 
-
 .medias {
   padding: 0 1rem 4rem;
   text-align: center;
@@ -273,26 +274,6 @@ img, video {
 .media {
   display: inline-block;
   margin-bottom: 1rem;
-}
-
-@media screen and (min-width: 1300px) {
-  .medias {
-    /* display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between; */
-  }
-
-  .media {
-    /* flex: 0 0 49%; */
-    /* width: 49%; */
-  }
-}
-
-@media screen and (min-width: 1700px) {
-  .media {
-    /* flex: 0 0 30%; */
-    /* width: 30%; */
-  }
 }
 
 .about {

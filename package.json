@@ -1,7 +1,7 @@
 {
   "name": "covid-good-news",
   "version": "1.0.0",
-  "description": "Covid good news",
+  "description": "A focus and list of positive news, facts and random stuff related to Covid-19.",
   "author": "Raphael Larrinaga",
   "private": true,
   "scripts": {

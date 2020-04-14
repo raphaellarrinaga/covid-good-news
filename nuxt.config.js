@@ -21,14 +21,14 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/png', sizes:"32x32", href: '/favicon-32x32.png' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap' }
     ]
   },
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#777fa5' },
   /*
   ** Global CSS
   */
@@ -48,10 +48,32 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    ['@nuxtjs/feed']
+    ['@nuxtjs/feed'],
+    // Generate static JSON based on data fetched from source.
+    // Works as cached data, generated on build task.
+    '~/modules/cgnData.js',
+    // function (nuxtConfig) {
+    //   this.nuxt.hook('generate:before', async () => {
+    //     const response = await axios.get(SHEET_DATA_SOURCE_URL)
+    //     const rows = response.data.values
+    //     const properties = rows.shift()
+    //     const articles = []
+    //     for (const i in rows) {
+    //       articles.push(_.zipObject(properties, rows[i]))
+    //     }
+    //     const aReversed = articles.reverse();
+    //     const data = JSON.stringify(aReversed)
+    //     // const distGeneratePath = resolve(this.options.rootDir, join(this.options.generate.dir, '/cgnData.json'))
+    //     const distGeneratePath = resolve(this.options.rootDir, join(this.options.alias.static, '/cgnData.json'))
+    //     try { writeFileSync(distGeneratePath, data, 'utf-8'); }
+    //     catch(e) { console.log('Failed to save cgnData.json'); }
+    //   })
+    // }
   ],
+  /*
+  ** Generate RSS feed.
+  */
   feed: [
-    // A default feed configuration object
     {
       path: '/feed.xml',
       async create(feed) {
@@ -93,5 +115,5 @@ export default {
     */
     extend (config, ctx) {
     }
-  }
+  },
 }
