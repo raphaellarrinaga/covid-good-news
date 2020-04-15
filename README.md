@@ -4,18 +4,13 @@
 
 ## Roadmap
 
-- switch domain to netlify
-- test google analytics
-- update summary content (links, static information)
-- provide exposed link to feed.xml
-- set og image or fallback from link
-- set date with timestamp
-- transiton on page load
-- better copy ✓ email address for feed back
 - provide a view for youtube videos, facebook, twitter, images only
-- protect google sheet.
-- emprove json load
+- set date with timestamp
 - pwa
+- better way to provide feed back
+- transiton on page load
+- protect google sheet.
+- improve json load
 - load more
 
 ## Development

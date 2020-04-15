@@ -4,7 +4,7 @@
       <div class="page-content">
         <header class="page-header">
           <h1 class="page-title">Covid <span>🙌🏼</span> news <small>beta</small></h1>
-          <h3 class="page-subtitle">Optimistic content only.</h3>
+          <h3 class="page-subtitle">Optimistic infos.</h3>
         </header>
         <div class="news">
           <article
@@ -27,18 +27,18 @@
           </article>
         </div>
         <section class="summary">
-          <p><strong>Useful infos elsewhere:</strong> <a href="https://www.rtl.be/info/progression-coronavirus-temps-reel.htm">📉 Dégression en temps réel</a>
-          <a href="https://www.info-coronavirus.be/fr/">🤙🏼 SPF</a>
-          <a href="https://www.who.int/fr/emergencies/diseases/novel-coronavirus-2019/advice-for-public/q-a-coronaviruses">👏🏼 OMS</a>
-          <a href="https://telegram.org/blog/coronavirus">✈️ Telegram blog</a></p>
+          <p><strong>Serious infos:</strong> <a href="https://coronavirus.jhu.edu/map.html">🌍 World Map</a>
+          <a href="https://www.info-coronavirus.be/fr/">🧠 SPF</a>
+          <a href="https://www.who.int/fr/emergencies/diseases/novel-coronavirus-2019/advice-for-public/q-a-coronaviruses">🏥 OMS</a>
+          <a href="https://www.google.com/search?sxsrf=ALeKk01isn7QENus7pXjMNTmDXMJ1yxAAw:1586983716411&q=Coronavirus+Stats&stick=H4sIAAAAAAAAAONgFuLVT9c3NMwySk6OL8zJUULlPmL05hZ4-eOesJTTpDUnrzHacHEFZ-SXu-aVZJZUCulxsUFZKlyCUqg6NRik-LlQhXh2MXF7pCbmlGQElySWFC9iFXTOL8rPSyzLLCotVgCLAQCnsUMMkAAAAA&sxsrf=ALeKk01isn7QENus7pXjMNTmDXMJ1yxAAw:1586983716411&biw=2560&bih=1306">📉 Stats</a></p>
         </section>
-        <section class="about" id="about">
-          <p>🤔 This project is a personal coding experimentation and work in progress. If you want to suggest links, contribute or anything, <a href="javascript:location='mailto:\u0063\u006f\u0076\u0069\u0064\u0067\u006f\u006f\u0064\u006e\u0065\u0077\u0073\u002e\u0063\u006f\u006e\u0074\u0061\u0063\u0074\u0040\u0067\u006d\u0061\u0069\u006c\u002e\u0063\u006f\u006d';void 0">send us a mail</a></p>
-          <p>Ce site est projet en évolution. N'hésitez pas à <a href="javascript:location='mailto:\u0063\u006f\u0076\u0069\u0064\u0067\u006f\u006f\u0064\u006e\u0065\u0077\u0073\u002e\u0063\u006f\u006e\u0074\u0061\u0063\u0074\u0040\u0067\u006d\u0061\u0069\u006c\u002e\u0063\u006f\u006d';void 0">envoyer un mail</a> pour ajouter des liens, contribuer ou autre. 👌🏼</p>
+        <section class="feedback">
+          <p>Come back later & before your leave…</p>
+          <a target="_blank" href="javascript:location='mailto:\u0063\u006f\u0076\u0069\u0064\u0067\u006f\u006f\u0064\u006e\u0065\u0077\u0073\u002e\u0063\u006f\u006e\u0074\u0061\u0063\u0074\u0040\u0067\u006d\u0061\u0069\u006c\u002e\u0063\u006f\u006d';void 0"><span>We need more news here</span> <i>👋</i> <span>Please share some</span> <i>📫</i></a>
+          <p>This page should improve, send your feedback too.</p>
         </section>
       </div>
     </div>
-
     <div
       class="medias">
       <client-only placeholder="loading" placeholder-tag="span">
@@ -79,10 +79,6 @@ export default {
 </script>
 
 <style>
-/*
- * Global.
- */
-
 * {
   box-sizing: border-box;
 }
@@ -139,13 +135,8 @@ img, video {
   font-size: 1.2rem;
   letter-spacing: .01em;
   line-height: 1;
-  margin: 0 0 1rem;
+  margin: 0;
   text-transform: uppercase;
-}
-@media screen and (min-width: 820px) {
-  .page-title {
-    margin: 0;
-  }
 }
   .page-title span {
     font-size: 1.4em;
@@ -162,7 +153,7 @@ img, video {
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;
-  margin: 0;
+  margin: 1rem 0 0;
 }
 
 /*
@@ -301,6 +292,7 @@ img, video {
   color: #fefefe;
   font-weight: 500;
   font-size: 1.5rem;
+  margin-bottom: 5rem;
   margin-top: 2rem;
   text-align: center;
 }
@@ -320,4 +312,66 @@ img, video {
   .about a:hover {
     text-decoration: none;
   }
+  .about p {
+    margin-bottom: .5rem;
+  }
+
+.feedback {
+  color: white;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.feedback p {
+  color: #777fa5;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: .8rem;
+  letter-spacing: .05rem;
+}
+.feedback a {
+  color: white;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 1.25rem 0;
+  text-decoration: none;
+  width: 100%;
+}
+
+.feedback i {
+  display: inline-block;
+  font-style: normal;
+}
+  .feedback a:hover i {
+    animation: wiggle 1s ease-in-out infinite;
+  }
+
+.feedback span {
+  display: inline-block;
+  transition: all .2s;
+}
+  .feedback a:hover span {
+    box-shadow: inset 0 -0.063em #1d2238, inset 0 -0.156em #777fa5;
+    display: inline;
+    text-shadow: 0.063em 0.063em #1d2238, -0.063em 0.063em #1d2238, 0.125em 0 #1d2238, -0.125em 0 #1d2238;
+  }
+
+@keyframes wiggle {
+  10%, 90% {
+    transform: rotate(-5deg);
+  }
+
+  20%, 80% {
+    transform: rotate(10deg);
+  }
+
+  30%, 50%, 70% {
+    transform: rotate(-20deg);
+  }
+
+  40%, 60% {
+    transform: rotate(20deg);
+  }
+}
 </style>
