@@ -24,7 +24,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/png', sizes:"32x32", href: '/favicon-32x32.png' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap' },
+      { rel: 'alternate', type: "application/rss+xml", title: "Covid Good News RSS", href: '/feed.xml' }
     ]
   },
   /*

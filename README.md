@@ -4,13 +4,17 @@
 
 ## Roadmap
 
-- protect google api, dont expose in repo or restrict.
+- switch domain to netlify
+- test google analytics
+- update summary content (links, static information)
+- provide exposed link to feed.xml
+- set og image or fallback from link
+- set date with timestamp
+- transiton on page load
+- better copy ✓ email address for feed back
+- provide a view for youtube videos, facebook, twitter, images only
 - protect google sheet.
-- test netlify
-- json rss
-- cache json
-- message end of list
-- mobile view switch, nav
+- emprove json load
 - pwa
 - load more
 
