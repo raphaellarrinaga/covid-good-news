@@ -21,7 +21,7 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
       { hid: 'og:description', property: 'og:description', content: process.env.npm_package_description || '' },
       { hid: 'og:title', property: 'og:title', content: 'Covid Good News' },
-      { hid: 'og:image', property: 'og:image', content: this.BASE_URL+ '/cgn-og-cover.png' },
+      { hid: 'og:image', property: 'og:image', content: 'https://covidgoodnews.be/cgn-og-cover.png' },
     ],
     link: [
       { rel: 'icon', type: 'image/png', sizes:"32x32", href: '/favicon-32x32.png' },

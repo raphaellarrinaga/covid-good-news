@@ -4,6 +4,7 @@
 
 ## Roadmap
 
+- fix og:image base url
 - provide a view for youtube videos, facebook, twitter, images only
 - set date with timestamp
 - pwa
