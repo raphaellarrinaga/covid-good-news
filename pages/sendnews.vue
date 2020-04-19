@@ -8,9 +8,20 @@
         </header>
         <div class="news">
 
-
 <form
-            action="/thanks"
+            data-netlify
+            data-netlify-honeypot="bot-field"
+  name="news-submit"
+  method="POST">
+            <input type="hidden" name="form-name" value="contactus" />
+  <p>
+    <label>Url: <input type="text" name="url" /></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
+<form
             netlify
             netlify-honeypot="bot-field"
   name="news-submit"
