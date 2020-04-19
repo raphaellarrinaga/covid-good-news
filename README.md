@@ -2,17 +2,21 @@
 
 > Display an optimistic list of links regarding COVID-19 news. Content is managed under Google Sheets. [covidgoodnews.be](https://covidgoodnews.be).
 
+## Content
+
+The content of this app is managed from a Google Sheet. Just send me a message if you want an access.
+
 ## Roadmap
 
+- use netlify form to provide feedback
 - fix og:image base url
 - provide a view for youtube videos, facebook, twitter, images only
 - set date with timestamp
-- pwa
-- better way to provide feed back
+- pwa (download, push notifcation)
 - transiton on page load
-- protect google sheet.
-- improve json load
-- load more
+- improve json load, cache
+- list items load more
+- review css, scss, css variables.
 
 ## Development
 

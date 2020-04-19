@@ -60,7 +60,6 @@
 
 <script>
 const axios = require('axios')
-const _ = require('lodash')
 import InstagramEmbed from 'vue-instagram-embed'
 import ClientOnly from 'vue-client-only'
 
