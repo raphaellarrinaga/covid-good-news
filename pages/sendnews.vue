@@ -9,7 +9,21 @@
         <div class="news">
 
 
-    <form name="news-submit"
+<form
+            action="/thanks"
+            netlify
+            netlify-honeypot="bot-field"
+  name="news-submit"
+  method="POST">
+            <input type="hidden" name="form-name" value="contactus" />
+  <p>
+    <label>Url: <input type="text" name="url" /></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
+    <!-- <form name="news-submit"
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
@@ -25,14 +39,11 @@
             @input="ev => url = ev.target.value"
             >
         <button type="submit" class="submit-button">Send</button>
-        <!-- <label>
-          Url:
-        </label> -->
       </div>
     </form>
     <div>
       {{ formMessage }}
-    </div>
+    </div>-->
 
 
         </div>
@@ -83,12 +94,12 @@ export default {
         }),
         axiosConfig
       )
-      .then(function (response) {
+      .then(response => {
         console.log(self.form);
         console.log(response);
         self.formMessage = "Thank you!";
       })
-      .catch(function (error) {
+      .catch(error => {
         console.log(error);
         console.log(response.error);
         self.formMessage = response.error;
