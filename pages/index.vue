@@ -20,7 +20,9 @@
               <p
                 class="article__metas"
                 v-if="article.PublicationDate || article.Source">
-                <time v-if="article.PublicationDate">{{ article.PublicationDate }}</time>
+                <time
+                  v-if="article.PublicationDate"
+                  :datetime="setDateFormat(article.PublicationDate)">{{ article.PublicationDate }}</time>
                 <span v-if="article.Source">{{ article.Source }}</span>
               </p>
             </div>
@@ -30,7 +32,8 @@
           <p><strong>Serious infos:</strong> <a href="https://coronavirus.jhu.edu/map.html">🌍 World Map</a>
           <a href="https://www.info-coronavirus.be/fr/">🧠 SPF</a>
           <a href="https://www.who.int/fr/emergencies/diseases/novel-coronavirus-2019/advice-for-public/q-a-coronaviruses">🏥 OMS</a>
-          <a href="https://www.google.com/search?sxsrf=ALeKk01isn7QENus7pXjMNTmDXMJ1yxAAw:1586983716411&q=Coronavirus+Stats&stick=H4sIAAAAAAAAAONgFuLVT9c3NMwySk6OL8zJUULlPmL05hZ4-eOesJTTpDUnrzHacHEFZ-SXu-aVZJZUCulxsUFZKlyCUqg6NRik-LlQhXh2MXF7pCbmlGQElySWFC9iFXTOL8rPSyzLLCotVgCLAQCnsUMMkAAAAA&sxsrf=ALeKk01isn7QENus7pXjMNTmDXMJ1yxAAw:1586983716411&biw=2560&bih=1306">📉 Stats</a></p>
+          <a href="https://www.google.com/search?sxsrf=ALeKk01isn7QENus7pXjMNTmDXMJ1yxAAw:1586983716411&q=Coronavirus+Stats&stick=H4sIAAAAAAAAAONgFuLVT9c3NMwySk6OL8zJUULlPmL05hZ4-eOesJTTpDUnrzHacHEFZ-SXu-aVZJZUCulxsUFZKlyCUqg6NRik-LlQhXh2MXF7pCbmlGQElySWFC9iFXTOL8rPSyzLLCotVgCLAQCnsUMMkAAAAA&sxsrf=ALeKk01isn7QENus7pXjMNTmDXMJ1yxAAw:1586983716411&biw=2560&bih=1306">📉 Stats</a>
+          <a href="https://www.facebook.com/groups/334154716664199">👍🏼 FB group</a></p>
         </section>
         <section class="feedback">
           <p>Come back later & before your leave…</p>
@@ -73,6 +76,15 @@ export default {
   components: {
     ClientOnly,
     InstagramEmbed
+  },
+  methods: {
+    setDateFormat: (value) => {
+      // Allow requiring momentjs since we know the data format.
+      if (value.length === 0) { return false; }
+      const arrayOfStrings = value.split("/");
+      const newsString = arrayOfStrings[2] + "-" + arrayOfStrings[1] + "-" + arrayOfStrings[0];
+      return newsString
+    }
   },
 }
 </script>

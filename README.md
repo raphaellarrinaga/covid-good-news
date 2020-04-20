@@ -8,14 +8,12 @@ The content of this app is managed from a Google Sheet. Just send me a message i
 
 ## Roadmap
 
+- load more (IG posts)
 - use netlify form to provide feedback
-- fix og:image base url
-- provide a view for youtube videos, facebook, twitter, images only
-- set date with timestamp
+- provide a view for twitter, youtube, facebook, images only
 - pwa (download, push notifcation)
-- transiton on page load
 - improve json load, cache
-- list items load more
+- fix og:image base url
 - review css, scss, css variables.
 
 ## Development
