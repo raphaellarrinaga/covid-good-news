@@ -81,38 +81,14 @@ export default {
     setDateFormat: (value) => {
       // Allow requiring momentjs since we know the data format.
       if (value.length === 0) { return false; }
-      const arrayOfStrings = value.split("/");
-      const newsString = arrayOfStrings[2] + "-" + arrayOfStrings[1] + "-" + arrayOfStrings[0];
-      return newsString
+      const formattedDate = value.split("/").reverse().join('-');
+      return formattedDate
     }
-  },
+  }
 }
 </script>
 
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background: #1d2238;
-  font: 16px/1.5 "Montserrat", "Helvetica", sans-serif;
-  position: relative;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
-}
-
-a {
-  transition: all .2s ease-in;
-}
-
-img, video {
-  max-width: 100%;
-  vertical-align: middle;
-}
-
 .page {
   padding: 2rem 1rem 6rem;
 }
