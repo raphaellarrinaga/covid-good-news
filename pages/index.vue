@@ -44,12 +44,18 @@
     </div>
     <div
       class="medias">
-      <client-only placeholder="loading" placeholder-tag="span">
+      <client-only
+        placeholder="loading"
+        placeholder-tag="span">
         <div
-          v-for="post in insta"
+          v-for="post in media"
           :key="post.id"
           class="media">
+          <Tweet
+            v-if="post.Twitter"
+            :id="post.Url" />
           <instagram-embed
+            v-if="post.Instagram"
             :url="post.Url"
             :max-width=500
           />
@@ -65,16 +71,18 @@
 const axios = require('axios')
 import InstagramEmbed from 'vue-instagram-embed'
 import ClientOnly from 'vue-client-only'
+import { Tweet } from 'vue-tweet-embed'
 
 export default {
   async asyncData () {
     const cgnData = await axios.get('/cgnData.json').then(res => res.data)
     const news = cgnData.filter(item => !item.Instagram && item.Url && item.Label)
-    const insta = cgnData.filter(item => item.Instagram && item.Url)
-    return { insta, news }
+    const media = cgnData.filter(item => (item.Instagram || item.Twitter) && item.Url)
+    return { media, news }
   },
   components: {
     ClientOnly,
+    Tweet,
     InstagramEmbed
   },
   methods: {

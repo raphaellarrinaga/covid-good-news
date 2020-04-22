@@ -17,7 +17,8 @@
     "dotenv": "^8.2.0",
     "nuxt": "^2.0.0",
     "vue-client-only": "^2.0.0",
-    "vue-instagram-embed": "^1.0.0"
+    "vue-instagram-embed": "^1.0.0",
+    "vue-tweet-embed": "^2.4.0"
   },
   "devDependencies": {
     "@nuxtjs/google-analytics": "^2.2.3"

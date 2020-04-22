@@ -11,7 +11,7 @@ The content of this app is managed from a Google Sheet. Just send me a message i
 - load more (IG posts)
 - use netlify form to provide feedback
 - mobile navigation (news/insta)
-- provide a view for twitter, youtube, facebook or images
+- provide a view for ✔ twitter, youtube, facebook or images
 - pwa (download, push notifcation)
 - filter list (language, country)
 - improve json load, cache
